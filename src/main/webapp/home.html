@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery-1.8.3.min.js"></script>
+
+<style>
+
+html, body {
+margin: 0;
+padding: 0;
+height: 1200px;
+background-color: #606060;
+width:100%;
+
+}
+body {
+display: block;
+background-color:#606060 ;
+font-family: 'Open Sans';
+font-weight:bold;
+
+}
+#header
+{
+height:160px;
+width:100%;
+border-bottom:1px  solid;
+border-color:#707070 ;
+float:left;
+background-color:black;
+}
+#menuBar
+{
+background-color:#606060 ;
+height:50px;
+width:100%;
+float:left;
+}
+#footer
+{
+height:60px;
+width:100%;
+clear:both;
+text-align:center;
+color:#606060;
+background-color:black;
+}
+
+#container
+{
+margin-left:9%;
+margin-right:5%;
+height:800px;
+width:90%;
+}
+#left-part
+{
+float:left;
+width:15%;
+border:1px solid;
+border-radius:15px;
+border-color:#707070  ;
+height:800px;
+background-color:#A0A0A0 ;
+}
+#middle-part
+{
+width:60%;
+float:left;
+border:1px solid;
+border-radius:15px;
+border-color:#707070  ;
+height:800px;
+background-color:#A0A0A0 ;
+}
+
+#iframe_a
+{
+height:800px;
+width:100%; 
+border-style: none;
+border-radius:15px;
+
+}
+
+
+#right-part
+{
+width:15%;
+float:left;
+margin-right:50px;
+border:1px solid;
+border-radius:15px;
+border-color:#707070;
+height:800px;
+background-color:#A0A0A0 ;
+}
+
+#bottom-part
+{
+margin-left:0%;
+margin-right:0%;
+background-color:#606060;
+height:130px;
+width:100%;
+clear:both;
+text-align:center;
+border-top:1px solid;
+border-color:#707070;
+
+}
+#logo
+{
+color:yellow;
+margin-left:9%;
+float:left;
+width:15%;
+height:50px;
+}
+#navBar
+{
+height:50px;
+float:left;
+}
+#navBar ul
+{
+list-style-type:none;
+margin-left:5%;
+padding:1%;
+overflow:hidden;
+float:left;
+width:100%;
+}
+#navBar li
+{
+float:left;
+border:1px solid;
+}
+#navBar a:link,#navBar a:visited
+{
+display:block;
+width:80px;
+font-weight:bold;
+color:#909090;
+background-color:#303030 ;
+text-align:center;
+padding:4px;
+text-decoration:none;
+float:left;
+border-radius:5px;
+
+
+}
+#navBar a:hover,#navBar a:active
+{
+font-weight:900px;
+color:#1E90FF; 
+font-size:17px;
+background-color:#606060;
+}
+
+#social-icon-list {
+    position: relative;
+    float:right;
+    display:block; 
+    margin-right:250px;
+    margin-top:25px;  
+}
+
+#social-icon-list li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 0;
+}
+
+#social-icon-list li, #social-icon-list a {
+    height: 24px;
+    display: block;
+}
+
+#fb {
+    left: 0px;
+    width: 24px;
+    background: url(images/sprites/sprites_icons2.png) -8px 0 no-repeat;
+}
+
+#twt {
+    left: 29px;
+    width: 24px;
+   background: url(images/sprites/sprites_icons2.png) -43px 0 no-repeat;
+}
+
+#gplus {
+    left: 58px;
+    width: 24px;
+    background: url(images/sprites/sprites_icons2.png) -78px 0 no-repeat;
+}
+#yt {
+    left: 87px;
+    width: 24px;    
+    background: url(images/sprites/youtube.png) 0px 0 no-repeat;
+}
+#fb:hover, #twt:hover, #gplus:hover, #yt:hover {
+opacity:0.5;
+}
+
+
+#social-icon-list2 {
+   position: relative;
+    float:right;
+    display:block; 
+    margin-right:250px;
+    margin-top:5px;  
+}
+
+#social-icon-list2 li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 0;
+}
+
+#social-icon-list2 li, #social-icon-list2 a {
+    height: 24px;
+    display: block;
+}
+
+#fb2 {
+    left: 0px;
+    width: 24px;
+    background: url(images/sprites/sprites_icons2.png) -8px 0 no-repeat;
+}
+
+#twt2 {
+    left: 29px;
+    width: 24px;
+   background: url(images/sprites/sprites_icons2.png) -43px 0 no-repeat;
+}
+
+#gplus2 {
+    left: 58px;
+    width: 24px;
+    background: url(images/sprites/sprites_icons2.png) -78px 0 no-repeat;
+}
+#yt2 {
+    left: 87px;
+    width: 24px;
+    background: url(images/sprites/youtube.png) 0px 0 no-repeat;
+}
+
+#fb2:hover, #twt2:hover, #gplus2:hover, #yt2:hover {
+opacity:1.0;
+}
+
+#fb2, #twt2, #gplus2, #yt2 {
+opacity:0.5;
+}
+</style>
+</head>
+<body>
+<div id="header">
+<div id="logo"><img src="images/java-j2ee-logo.jpg"/></div>
+<div id="navBar">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="">Java</a></li>
+<li><a href="">J2ee</a></li>
+<li><a href="">Web</a></li>
+<li><a target="iframe_a" href="sol1.html">Solutions</a></li>
+<li><a target="iframe_a" href="blogs.html">Blogs</a></li>
+<li><a target="iframe_a" href="about.html">About</a></li>
+<li><a href="">FeedBack</a></li>
+</ul>
+</div>
+<ul id="social-icon-list">
+  <li id="fb"><a href="https://www.facebook.com/pages/Java-J2eeorg/416035918534372" title="like" target="_blank"></a></li>
+  <li id="twt"><a href="https://twitter.com/JavaJ2eeOrg" title="tweet" target="_blank"></a></li>
+  <li id="gplus"><a href="https://plus.google.com/113496706612668736770/posts" title="visit" target="_blank"></a></li>
+  <li id="yt"><a href="https://www.youtube.com/channel/UC5uVmLZqKgJ2raRgHgB9Q5w" title="watch" target="_blank"></a></li>
+</ul>    
+</div>
+<div id="menuBar"></div>
+
+<div id="container" align="center">
+
+<div id="left-part" >
+
+<div style="margin-left:10px;">&nbsp;&nbsp;&nbsp;Index<br/>
+&nbsp;&nbsp;&nbsp;Java<br/>
+<ul type="none">
+<li><a href="">CoreJava</a></li>
+</ul>
+&nbsp;&nbsp;&nbsp;J2ee<br/>
+<ul type="none">
+<li><a href="">JDBC</a></li>
+<li><a href="">Servlet</a></li>
+<li><a href="">JSP</a></li>
+<li><a href="">Struts</a></li>
+<li><a href="">Spring</a></li>
+<li><a href="">Hibernate</a></li>
+</ul>
+&nbsp;&nbsp;&nbsp;Web<br/>
+<ul type="none">
+<li><a href="">HTML</a></li>
+<li><a href="">CSS</a></li>
+<li><a href="">JavaScript</a></li>
+<li><a href="">JQuery</a></li>
+</ul>
+</div>
+</div>
+
+<div id="middle-part">
+<iframe  id="iframe_a" src="" name="iframe_a"></iframe>
+</div>
+
+<div id="right-part">
+&nbsp; &nbsp; &nbsp;&nbsp;Reference
+</div>
+
+</div>
+
+<div id="menuBar"></div>
+
+
+<div id="bottom-part">
+<ul id="social-icon-list2">
+  <li id="fb2"><a href="https://www.facebook.com/pages/Java-J2eeorg/416035918534372" title="like" target="_blank"></a></li>
+  <li id="twt2"><a href="https://twitter.com/JavaJ2eeOrg" title="tweet" target="_blank"></a></li>
+  <li id="gplus2"><a href="https://plus.google.com/113496706612668736770/posts" title="visit" target="_blank"></a></li>
+  <li id="yt2"><a href="https://www.youtube.com/channel/UC5uVmLZqKgJ2raRgHgB9Q5w" title="watch" target="_blank"></a></li>
+</ul> 
+</div>
+
+<div id="footer">
+<br/>
+Copyright © Java-J2ee.org
+</div>
+</body>
+</html>
