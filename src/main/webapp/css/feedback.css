@@ -1,0 +1,83 @@
+@CHARSET "ISO-8859-1";
+body{
+margin:0;
+padding:0;
+background-color: #606060;
+}
+
+#email,#name,#mobile
+{
+ width:450px;
+ border: 1px solid #707070;
+ background-color: #707070;
+}
+#inside-label
+{
+font-size:17px;
+font-weight: bold;
+font-style:italic;
+}
+#form_content
+{	
+	margin-left:50px;	
+}
+tr.blank
+{
+	height:10px;
+}
+#success-msg
+{	
+	color:green;
+}
+#msg
+{	
+	color:red;
+}
+
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 192, 192, 192, .8 ) 
+                url('images/ajax-loader.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading .modal {
+    display: block;
+}
+
+.css_button{
+	
+	background-color: #707070;
+	color:black;
+	border-radius:5px;
+	border: 1px solid #707070;	
+	font-size:14px;
+	font-weight: bold;
+	height:30px;
+}
+
+.css_button:hover {  
+   background-color: black;
+}
+      
+div.editable {
+   width: 550px;   
+   height: 250px;
+   border: 1px solid #707070;
+   padding: 2px;
+   background-color: #707070;
+   overflow: auto;
+   }
+
+

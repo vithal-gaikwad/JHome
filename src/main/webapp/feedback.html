@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/feedback.css">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript"  src="js/feedback.js"></script>
+</head>
+<body>
+
+<div align="left" >
+
+<fieldset style="width:50%;margin-left:2%;margin-top:5px;border:none;">
+<legend>FeedBack:</legend><br/>
+
+<form id="feedBackForm" method="post">
+
+<div id="form_content">
+
+<table>
+
+<tr>
+<td align="right">
+<label id="inside-label">Name:</label>
+</td>
+<td align="left">
+<input type="text" id="name" name="name"  value="" placeholder="Name" required/>
+</td>
+</tr>
+
+<tr class="blank"><td></td></tr>
+
+<tr>
+<td align="right">
+<label id="inside-label">Email:</label>
+</td>
+<td align="left">
+<input type="email" id="email" name="email"  value="" placeholder="someone@gmail.com" required/>
+</td>
+</tr>
+<tr class="blank"><td></td></tr>
+
+<tr>
+<td align="right">
+<label id="inside-label">Mobile:</label>
+</td>
+<td align="left">
+<input type="text" id="mobile" name="mobile"  value="" placeholder="+91-8812345678" required/>
+</td>
+</tr>
+<tr class="blank"><td></td></tr>
+
+<tr>
+<td align="right" valign="top">
+<label id="inside-label">Message:</label><br/>
+</td>
+<td align="left"> 
+<div id="editable"  class="editable" >message here...</div> 
+</td>
+</tr>
+
+<tr class="blank"><td></td></tr>
+
+<tr>
+<td>
+<label></label><br/>
+</td>
+<td align="left"> 
+<input type="button" id="send-feedBack-btn" class="css_button" value="Send" />
+</td>
+</tr>
+
+</table> 
+
+<div id="msg" align="center"></div> 
+<div id="success-msg" align="center"></div> 
+<input type="hidden" id="textMsg" name="textMsg" />
+
+</div>
+</form>
+</fieldset>
+</div>
+<div class="modal"></div>
+</body>
+</html>
