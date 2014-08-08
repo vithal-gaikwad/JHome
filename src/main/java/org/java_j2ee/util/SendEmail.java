@@ -11,20 +11,28 @@ import org.apache.log4j.Logger;
 
 public class SendEmail {
 	private static final Logger logger = Logger.getLogger(SendEmail.class); 
-	public static boolean sendEmail(String from,String password,String name,String subject,String html_string, String SendIds,String fileAttach) throws EmailException{
+	public static boolean sendEmail(String name,String user_email,String mobile,String textMsg) throws EmailException{
 		logger.info("inside send email...");	
-		if(name==null){
-			name="TravelMarg";
-		}
+		//name=name+":"+user_email+":"+mobile;		
+		textMsg="name="+name+"<br/> mobile="+mobile+"<br/>email="+user_email+"<br/> message="+textMsg;		
+		
+		String subject="feedBack";
+		String from="contact.java.j2ee.org@gmail.com";
+		String password = "antaratma";
+		String SendIds=from;
 		String email_to_send=""; 		
 		boolean flag=true;
-		Boolean smtp_auth =Boolean.valueOf(PrjProperties.getProperty("USE_SMTP_AUTHENTICATION"));	
+		//Boolean smtp_auth =Boolean.valueOf(PrjProperties.getProperty("USE_SMTP_AUTHENTICATION"));	
+		Boolean smtp_auth = true;
 		HtmlEmail email = new HtmlEmail();
 		if(smtp_auth==true){
-			String SMTP_HOST = PrjProperties.getProperty("SMTP_HOST");
-			String smtp_port = PrjProperties.getProperty("SMTP_PORT");
+			//String SMTP_HOST = PrjProperties.getProperty("SMTP_HOST");
+			String SMTP_HOST="smtp.gmail.com";
+			//String smtp_port = PrjProperties.getProperty("SMTP_PORT");
+			String smtp_port="587";
 			int SMTP_PORT=Integer.parseInt(smtp_port);
 			email.setHostName(SMTP_HOST);
+			
 			String authUser = from;
 			String authPassword = password;
 			email.setSmtpPort(SMTP_PORT);
@@ -35,7 +43,7 @@ public class SendEmail {
 		email.setFrom(from,name);
 		email.setDebug(false);
 		email.setSubject(subject);
-		email.setHtmlMsg(html_string);
+		email.setHtmlMsg(textMsg);
 		ArrayList bccList = new ArrayList();
 		if(SendIds.indexOf(",")!= -1)
 		{
@@ -58,7 +66,7 @@ public class SendEmail {
 		}
 		System.out.println("bccList:"+bccList.size());            
 		email.addTo(email_to_send,"");	
-		System.out.println("fileAttach.length()="+fileAttach.length());
+		/*System.out.println("fileAttach.length()="+fileAttach.length());
 		if(fileAttach!=null && fileAttach.length()!=0){
 			EmailAttachment attachment = new EmailAttachment();
 			String folderPath=PrjProperties.getProperty("FOLDER_PATH");
@@ -66,9 +74,10 @@ public class SendEmail {
 			attachment.setPath(folderPath);
 			attachment.setDisposition(EmailAttachment.ATTACHMENT);
 			// attachment.setDescription("Picture of John");
-			attachment.setName("travelmarg");	
-			email.attach(attachment);
+			attachment.setName("Java-J2ee.org");	
+			email.attach(attachment);			
 		}
+		*/
 		email.setBcc(bccList);	
 		email.setTLS(true);  
 		email.send();

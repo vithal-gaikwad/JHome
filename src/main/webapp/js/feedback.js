@@ -74,7 +74,7 @@ $(document).ready(function(){
 			return false;
 		}	
 
-		var url="../service/sendEmail";
+		var url="/JHome/service/sendEmail";
 
 		loadingStart();
 
